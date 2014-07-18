@@ -17,7 +17,7 @@
 			$con = mysql_connect(DB_SERVER, DB_USER, DB_PASS);
 			// selecting database
 			if($con){
-				mysql_select_db(DB_DATABASE);
+				mysql_select_db(PDMA_DB);
 			}
  
 			// return database handler
