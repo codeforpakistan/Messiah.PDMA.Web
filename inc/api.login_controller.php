@@ -19,19 +19,19 @@
 		$db = new DB_Functions();
 
 		// response Array
-		$response = array("Status" => false);
+		$response = array("Status" => 0);
 
 		// check for user
 		$user = $db->getUserByUsernameAndPassword($username, $password);
 		if ($user != false) {
 			// user found
 			// echo json with success = 1
-			$response["Status"] = true;
+			$response["Status"] = 1;
 			echo json_encode($response);
 		} else {
 			// user not found
 			// echo json with error = 1
-			$response["Status"] = false;
+			$response["Status"] = 0;
 			echo json_encode($response);
 		}
 	} else {
