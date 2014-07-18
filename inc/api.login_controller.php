@@ -8,10 +8,10 @@
 	/* --------------------------
 	/* check for POST request 
 	/*/
-	if ((isset($_POST['Username']) && $_POST['Username'] != '') && (isset($_POST['Password']) && $_POST['Password'] != '')) {
+	if ((isset($_GET['Username']) && $_GET['Username'] != '') && (isset($_GET['Password']) && $_GET['Password'] != '')) {
 		// get tag
-		$username = $_POST['Username'];
-		$password = $_POST['Password'];
+		$username = $_GET['Username'];
+		$password = $_GET['Password'];
 		$hashed_password = sha1($password);
 
 		// include db handler
