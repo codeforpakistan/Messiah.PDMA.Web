@@ -5,4 +5,3 @@
 	define("DB_USER", "root");
 	define("DB_PASS", "");
 	define("PDMA_DB", "pdma");
-?>
