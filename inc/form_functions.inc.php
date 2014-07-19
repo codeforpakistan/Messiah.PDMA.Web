@@ -19,13 +19,3 @@
 		}
 		return $field_errors;
 	}
-	
-	function display_errors($error_array) {
-		//Function to display errors if any!
-		echo "<p class=\"error\">";
-		echo "Please review the following fields:</p>";
-		foreach($error_array as $error) {
-			echo "<p class=\"error\"> - " . $error . "</p>";
-		}
-	}
-?>

@@ -48,20 +48,3 @@
 			die("Database Query Failed: " . mysql_error());
 		}
 	}
-	
-	function edit_and_delete_operations($urlVal){
-		$query = "SELECT * FROM tbl_ope";
-		$operation = mysql_query($query); 
-		check_query($operation);
-		while ($sel_ope = mysql_fetch_array($operation)) {
-			if ($sel_ope['ope_id'] == 3) {
-				echo "<a href=\"cnt.php?grp=". urlencode($_GET['grp']) . "&table=". urlencode($_GET['table']) . "&ope=" . urlencode($sel_ope['ope_id']) . "&data=" . urlencode($urlVal) . "\">" . $sel_ope['ope_name'] . "</a> | ";
-			}
-			else if ($sel_ope['ope_id'] == 4) {
-				echo "<a onclick=\"return confirm('Are you Sure?');\" href=\"cnt.php?grp=". urlencode($_GET['grp']) . "&table=". urlencode($_GET['table']) . "&ope=" . urlencode($sel_ope['ope_id']) . "&data=" . urlencode($urlVal) . "\">" . $sel_ope['ope_name'] . "</a><br />";
-			}
-		}
-	}
-	
-	
-?>
