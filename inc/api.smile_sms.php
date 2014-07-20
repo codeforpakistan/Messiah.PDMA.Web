@@ -2,7 +2,7 @@
 	#=======================================================================#
 	#	START - Smile API Class												#
 	#=======================================================================#
-	CLASS SMILE_API {
+	class SmileAPI {
 		function get_session() {
 			$username = "6";			//Put your API Username here
 			$password = "smileit8531";	//Put your API Password here
@@ -71,6 +71,6 @@
 		}
 	}
 	#=======================================================================#
-	#	START - Smile API Class												#
+	#	End - Smile API Class												#
 	#=======================================================================#
-	$object_smile_api = new SMILE_API();
+	$smile_API_object = new SmileAPI();
