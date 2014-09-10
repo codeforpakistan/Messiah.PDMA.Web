@@ -18,7 +18,7 @@
 
 		/**
 		/* Get user by username and password
-		/*/
+		*/
 		public function getUserByUsernameAndPassword($username, $password) {
 			$result = @mysql_query("SELECT * FROM users WHERE username = '$username'") or die(mysql_error());
 			// check for result 
@@ -39,7 +39,7 @@
 
 		/**
 		/* Check user is existed or not
-		/*/
+	  */
 		public function UserExists($username) {
 			$result = @mysql_query("SELECT username from users WHERE username = '$username'");
 			$no_of_rows = @mysql_num_rows($result);
