@@ -20,14 +20,14 @@
 						<a class="left-off-canvas-toggle menu-icon"><span></span></a>
 					</section>
 					<section class="right">
-						<a href="#" data-dropdown="user-details" data-options="align:left" class="fa fa-2x fa-user user-icon dropdown"><span style="font-size:18px; font-family:Lato"> User</span></a>&nbsp;&nbsp;&nbsp;
+						<a href="#" data-dropdown="user-details" data-options="align:left" class="fa fa-2x fa-user user-icon dropdown">
+							<span style="font-size:18px; font-family:Lato"> User</span>
+						</a>&nbsp;&nbsp;&nbsp;
 					</section>
 					<a style="margin-left:55px;" href="."><img src="img/logo.png" width="200" height="auto"></a>
 				</nav>
 				<ul id="user-details" data-dropdown-content class="f-dropdown">
-					<li><a href="#">This is a link</a></li>
-					<li><a href="#">This is another</a></li>
-					<li><a href="#">Yet another</a></li>
+					<li><a href="#">Logout</a></li>
 				</ul>
                 <!-- Right Nav Section -->
 				<!-- Off Canvas Menu -->
@@ -35,25 +35,22 @@
 					<!-- whatever you want goes here -->
 					<ul class="off-canvas-list">
 						<li class="divider"></li>
-						<li><a href="."><img src="img/logo.png" width="180" height="auto"></a></li>
+						<li><a href="#"><img src="img/logo.png" width="180" height="auto"></a></li>
 						<li class="divider"></li>
 						<li><a href=".">Home</a></li>
 						<li class="divider"></li>
 						<li><a href="search.php">Search By Report</a></li>
 						<li class="divider"></li>
-						<li><a href="http://www.messiahapp.com/team.php">About Us</a></li>
+						<li><a href="pdma.php#revieved-sms">Recieved SMSs</a></li>
 						<li class="divider"></li>
-						<li><a href="http://www.messiahapp.com/contact.php">Contact Us</a></li>
-						<li class="divider"></li>
-						<li><a href="#" data-options="align:left" data-dropdown="login" class="">Log In</a></li>
 					</ul>
 				</aside>
 				<!-- main content goes here -->
 				<!-- close the off-canvas menu -->
 				<a class="exit-off-canvas"></a><br><br>
-				<div class="large-9 columns">
-					<h4>One Click Messenger</h4><hr>
-					<p>Messiah acts as your one click messenger and allows you to contact your loved ones in case of emergency by just the press of a button. This button also alerts your nearby messiahs of your distress signal.</p>
+				<div class="small-12 columns">
+					<!-- All to PDMA Content goes here -->
+					<hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
 				</div>
 				<footer>
 					<div class="large-12 columns">
@@ -81,7 +78,17 @@
 		<script src="js/vendor/jquery.js"></script>
 		<script src="js/foundation.min.js"></script>
 		<script>
-			$(document).foundation();
+			$(document).foundation({
+				offcanvas : {
+					open_method: 'move', // Sets method in which offcanvas opens, can also be 'overlap'
+					close_on_click : true
+				}
+			});
+			$(document).on('open.fndtn.offcanvas', '[data-offcanvas]', function() {
+				$('html').css('overflow', 'hidden');
+			}).on('close.fndtn.offcanvas', '[data-offcanvas]', function() {
+				$('html').css('overflow', 'auto');
+			})
 		</script>
 	</body>
 </html>
