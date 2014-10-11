@@ -1,6 +1,9 @@
 <?php
+  
+  namespace ClassLibrary;
+
   class SmileAPI {
-    function get_session() {
+    public function get_session() {
       $username = "6";      //Put your API Username here
       $password = "smileit8531";  //Put your API Password here
       $data = file_get_contents("http://api.smilesn.com/session?username=" . $username . "&password=" . $password);
@@ -13,7 +16,7 @@
       return $sessionid;
     }
 
-    function send_sms($receivenum, $sendernum, $textmessage) {
+    public function send_sms($receivenum, $sendernum, $textmessage) {
       $receivenum = urlencode($receivenum);
       $sendernum = urlencode($sendernum);
       $textmessage = urlencode($textmessage);
@@ -42,7 +45,7 @@
       #===========================================================================#
       return $data;
     }
-    function receive_sms() {
+    public function receive_sms() {
       $session_file = file("session.txt");
       $session_id = trim($session_file[0]);
       if(empty($session_id)) {

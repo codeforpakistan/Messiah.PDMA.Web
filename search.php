@@ -1,3 +1,6 @@
+<?php
+	require 'inc/autoload.php';
+?>
 <!doctype html>
 <html class="no-js" lang="en">
 	<head>
@@ -30,10 +33,6 @@
 						<li class="divider"></li>
 						<li><a href=".">Overview</a></li>
 						<li class="divider"></li>
-						<li><a href="features.php">Features</a></li>
-						<li class="divider"></li>
-						<li><a href="team.php">Team</a></li>
-						<li class="divider"></li>
 						<li><a href="contact.php">Contact Us</a></li>
 						<li class="divider"></li>
 						<li><a href="#" data-options="align:left" data-dropdown="login" class="">Log In</a></li>
@@ -56,10 +55,6 @@
 								<ul class="left">
 									<li class="divider"></li>
 									<li><a href=".">Overview</a></li>
-									<li class="divider"></li>
-									<li><a href="features.php">Features</a></li>
-									<li class="divider"></li>
-									<li><a href="team.php">Team</a></li>
 									<li class="divider"></li>
 									<li><a href="contact.php">Contact Us</a></li>
 									<li class="divider"></li>
@@ -102,7 +97,7 @@
 										<div class="row collapse">
 											<label>
 												<div class="small-3 large-2 columns"><span class="prefix"><span class="fa fa-credit-card"></span> NIC</span></div>
-												<div class="small-9 large-10 columns"><input type="text" placeholder="Enter your NIC" required></div>
+												<div class="small-9 large-10 columns"><input name="CNIC" id="CNIC" type="text" placeholder="Enter your NIC"></div>
 											</label>
 										</div>
 									</div>
@@ -110,7 +105,7 @@
 										<div class="row collapse">
 											<label>
 												<div class="small-3 large-2 columns"><span class="prefix"><span class="fa fa-barcode"></span> GID</span></div>
-												<div class="small-9 large-10 columns"><input type="password" placeholder="Enter the Grievance ID provided to you" required></div>
+												<div class="small-9 large-10 columns"><input type="text" name="GID" id="GID" placeholder="Enter the Grievance ID provided to you"></div>
 											</label>
 										</div>
 									</div>
@@ -124,6 +119,13 @@
 								</div>
 							</form>
 						</div>
+							<?php
+								if(isset($_POST['CNIC']) || isset($_POST['GID'])){
+									var_dump($_POST['GID']);
+									$dbFunctions = new \ClassLibrary\DBFunctions();
+									$response  = $dbFunctions->searchByNIC($_POST['CNIC']);
+								}
+							?>
 							<div class="small-12">
 								<table>
 									<thead>
@@ -137,30 +139,6 @@
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td>Content Goes Here</td>
-											<td>Content Goes Here</td>
-											<td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-											<td>Content Goes Here</td>
-											<td>Content Goes Here</td>
-											<td>Content Goes Here</td>
-										</tr>
-										<tr>
-											<td>Content Goes Here</td>
-											<td>Content Goes Here</td>
-											<td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-											<td>Content Goes Here</td>
-											<td>Content Goes Here</td>
-											<td>Content Goes Here</td>
-										</tr>
-										<tr>
-											<td>Content Goes Here</td>
-											<td>Content Goes Here</td>
-											<td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-											<td>Content Goes Here</td>
-											<td>Content Goes Here</td>
-											<td>Content Goes Here</td>
-										</tr>
 										<tr>
 											<td>Content Goes Here</td>
 											<td>Content Goes Here</td>

@@ -1,5 +1,7 @@
 <?php
-	require_once 'class.smile.api.inc.php';
+	
+	require 'autoload.php';
+
 	$smile_API_object = new SmileAPI();
 
 	$msgs = $smile_API_object->receive_sms();

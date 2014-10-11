@@ -1,4 +1,6 @@
 <?php
+
+  require 'autoload.php';
   /* --------------------------------------
   /* File to handle all API requests
   /* Accepts GET and POST
@@ -8,36 +10,35 @@
   /* --------------------------------------
   /* check for POST request 
   /*/
-  if ((isset($_GET['GID'])            && $_GET['GID']             != '') &&
-      (isset($_GET['Username'])       && $_GET['Username']        != '') &&
-      (isset($_GET['ApplicantName'])  && $_GET['ApplicantName']   != '') &&
-      (isset($_GET['FatherName'])     && $_GET['FatherName']      != '') &&
-      (isset($_GET['CNIC'])           && $_GET['CNIC']            != '') &&
-      (isset($_GET['PhoneNumber'])    && $_GET['PhoneNumber']     != '') &&
-      (isset($_GET['Address'])        && $_GET['Address']         != '') &&
-      (isset($_GET['Damage'])         && $_GET['Damage']          != '') &&
-      (isset($_GET['Date'])           && $_GET['Date']            != '') &&
-      (isset($_GET['Location'])       && $_GET['Location']        != '') &&
-      (isset($_GET['Detail'])         && $_GET['Detail']          != '') &&
-      (isset($_GET['RawData'])        && $_GET['RawData']         != '')) {
+  if ((isset($_POST['GID'])            && $_POST['GID']             != '') &&
+      (isset($_POST['Username'])       && $_POST['Username']        != '') &&
+      (isset($_POST['ApplicantName'])  && $_POST['ApplicantName']   != '') &&
+      (isset($_POST['FatherName'])     && $_POST['FatherName']      != '') &&
+      (isset($_POST['CNIC'])           && $_POST['CNIC']            != '') &&
+      (isset($_POST['PhoneNumber'])    && $_POST['PhoneNumber']     != '') &&
+      (isset($_POST['Address'])        && $_POST['Address']         != '') &&
+      (isset($_POST['Damage'])         && $_POST['Damage']          != '') &&
+      (isset($_POST['Date'])           && $_POST['Date']            != '') &&
+      (isset($_POST['Location'])       && $_POST['Location']        != '') &&
+      (isset($_POST['Detail'])         && $_POST['Detail']          != '') &&
+      (isset($_POST['RawData'])        && $_POST['RawData']         != '')) {
       
         // get tag
-        $GID = $_GET['GID'];
-        $Username = $_GET['Username'];
-        $ApplicantName = $_GET['ApplicantName'];
-        $FatherName = $_GET['FatherName'];
-        $CNIC = $_GET['CNIC'];
-        $PhoneNumber = $_GET['PhoneNumber'];
-        $Address = $_GET['Address'];
-        $Damage = $_GET['Damage'];
-        $Date = $_GET['Date'];
-        $Location = $_GET['Location'];
-        $Detail = $_GET['Detail'];
-        $RawData = $_GET['Detail'];
+        $GID = $_POST['GID'];
+        $Username = $_POST['Username'];
+        $ApplicantName = $_POST['ApplicantName'];
+        $FatherName = $_POST['FatherName'];
+        $CNIC = $_POST['CNIC'];
+        $PhoneNumber = $_POST['PhoneNumber'];
+        $Address = $_POST['Address'];
+        $Damage = $_POST['Damage'];
+        $Date = $_POST['Date'];
+        $Location = $_POST['Location'];
+        $Detail = $_POST['Detail'];
+        $RawData = $_POST['RawData'];
         
         // include db handler
-        require_once 'class.data.functions.inc.php';
-        $db = new DataFunctions();
+        $db = new \ClassLibrary\DBFunctions();
 
         // response Array
         $response = array("Status" => 0);
