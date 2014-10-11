@@ -1,4 +1,7 @@
 <?php
+	
+	require 'autoload.php';
+
 	/* --------------------------------------
 	/* File to handle all API requests
 	/* Accepts GET and POST
@@ -15,8 +18,7 @@
 		$hashed_password = sha1($password);
 
 		// include db handler
-		require_once 'class.db.functions.inc.php';
-		$db = new DB_Functions();
+		$db = new \ClassLibrary\DBFunctions();
 
 		// response Array
 		$response = array("Status" => 0);
