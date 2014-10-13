@@ -49,11 +49,16 @@
           // Data inserted found
           // Now Convert Rawdata to Images
           $ImagesArray = explode("|", $RawData);
-          $binary = base64_decode($base);
-          header('Content-Type: bitmap; charset=utf-8');
-          $file = fopen('{$GID}.jpg', 'wb');
-          fwrite($file, $binary);
-          fclose($file);
+          $i = 1;
+          foreach ($ImagesArray as $image) {
+            $binary = base64_decode($image);
+            mkdir("../img/pdma-survey-images/{$GID}");
+            header('Content-Type: bitmap; charset=utf-8');
+            $file = fopen('../img/pdma-survey-images/{$GID}/{$GID}-{$i}.jpg', 'wb');
+            $i++;
+            fwrite($file, $binary);
+            fclose($file);
+          }
           // echo json with success = 1
           $response["Status"] = 1;
           echo json_encode($response);
