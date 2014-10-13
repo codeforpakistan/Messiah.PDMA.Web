@@ -1,5 +1,5 @@
 /* Overrided CSS */
-html, body { font-family: Lato, Georgia, "Times New Roman", Times, serif; }
+html, body { font-family: 'Lato', Georgia, 'Times New Roman', Times, serif; }
 .contain-to-grid { background: #117448; }
 .top-bar { background: #117448;}
 .top-bar ul > li a:not(.button) { color: white; }
