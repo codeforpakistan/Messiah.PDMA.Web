@@ -55,7 +55,7 @@
 					$binary = base64_decode($image);
 					mkdir("../img/pdma-survey-images/{$GID}");
 					header('Content-Type: bitmap; charset=utf-8');
-					$file = fopen('../img/pdma-survey-images/{$GID}/{$GID}-{$i}.jpg', 'wb');
+					$file = fopen("../img/pdma-survey-images/{$GID}/{$GID}-{$i}.jpg", 'wb');
 					$i++;
 					fwrite($file, $binary);
 					fclose($file);
