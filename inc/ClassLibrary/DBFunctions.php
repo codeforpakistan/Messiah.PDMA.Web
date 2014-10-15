@@ -28,7 +28,8 @@ class DBFunctions {
 					) VALUES (
 						'{$GID}', '{$Username}', '{$ApplicantName}', '{$FatherName}', '{$CNIC}', '{$PhoneNumber}', '{$Address}', '{$Damage}', '{$Date}', '{$Location}', '{$Detail}'
 					)";
-		$result = @mysql_query($query, $connection);
+		$result = @mysql_query($query);
+		var_dump($result);
       	// check for result 
 		if ($result) {
 			return true;
