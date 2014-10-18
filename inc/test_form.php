@@ -1,5 +1,5 @@
 <?php
-    require 'inc/api.data_controller.php';
+    require 'api.data_controller.php';
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -7,10 +7,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Messiah | PDMA</title>
-    <link rel="stylesheet" href="css/foundation.css" />
-    <link rel="stylesheet" href="css/font-awesome.css" />
-    <link rel="stylesheet" href="css/app.css" />
-    <link href='http://fonts.googleapis.com/css?family=Lato:400,100,100italic,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/foundation.css" />
+    <link rel="stylesheet" href="../css/font-awesome.css" />
+    <link rel="stylesheet" href="../css/app.css" />
+    <!-- <link href='http://fonts.googleapis.com/css?family=Lato:400,100,100italic,700,900' rel='stylesheet' type='text/css'> -->
     <link rel="stylesheet" href="css/normalize.css" />
     <script src="js/vendor/modernizr.js"></script>
 </head>
@@ -207,8 +207,8 @@
             <!-- End of inner-wrap -->
         </div>
         <!-- End of off-canvas -->
-        <script src="js/vendor/jquery.js"></script>
-        <script src="js/foundation.min.js"></script>
+        <script src="../js/vendor/jquery.js"></script>
+        <script src="../js/foundation.min.js"></script>
         <script>
             $(document).foundation();
         </script>

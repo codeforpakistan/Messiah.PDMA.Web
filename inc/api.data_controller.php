@@ -53,9 +53,12 @@
 				$i = 1;
 				foreach ($ImagesArray as $image) {
 					$binary = base64_decode($image);
-					mkdir("../img/pdma-survey-images/{$GID}");
+					$imgaeDirectory = "../img/pdma-survey-images/" . $GID;
+					var_dump($imgaeDirectory);
+					mkdir($imgaeDirectory);
 					header('Content-Type: bitmap; charset=utf-8');
-					$file = fopen("../img/pdma-survey-images/{$GID}/{$GID}-{$i}.jpg", 'wb');
+					$imagePath = "../img/pdma-survey-images/". $GID. "/" . $GID . "-" . $i . ".jpg";
+					$file = fopen($imagePath, 'wb');
 					$i++;
 					fwrite($file, $binary);
 					fclose($file);
@@ -69,5 +72,4 @@
 				echo json_encode($response);
 			}
 	} else {
-		echo "Data not sent correctly";
 	}
