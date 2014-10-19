@@ -1,11 +1,11 @@
 <?php
 	
 	require 'autoload.php';
-
-	$smile_API_object = new SmileAPI();
+	/*Message Format
+	  PDMA Fullt Name, Father Name, CNIC, Phone No, Damage Type, Address
+	*/
+	$smile_API_object = new \ClassLibrary\SmileAPI();
 
 	$msgs = $smile_API_object->receive_sms();
-
-	print_r($msgs);
-	echo "<br><p>-----------</p><br>";
-	var_dump($msgs);
+	$msgs2 = json_decode($msgs);
+	print_r($msgs2->status['0']->text);

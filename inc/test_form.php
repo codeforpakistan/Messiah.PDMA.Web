@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="../css/foundation.css" />
     <link rel="stylesheet" href="../css/font-awesome.css" />
     <link rel="stylesheet" href="../css/app.css" />
-    <!-- <link href='http://fonts.googleapis.com/css?family=Lato:400,100,100italic,700,900' rel='stylesheet' type='text/css'> -->
-    <link rel="stylesheet" href="css/normalize.css" />
-    <script src="js/vendor/modernizr.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,100,100italic,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <script src="../js/vendor/modernizr.js"></script>
 </head>
 <body>
     <!-- Off Canvas -->
@@ -22,18 +22,18 @@
                 <section class="left-small">
                     <a class="left-off-canvas-toggle menu-icon"><span></span></a>
                 </section>
-                <a style="margin-left:55px;" href="."><img src="img/logo.png" width="200" height="auto"></a>
+                <a style="margin-left:55px;" href="."><img src="../img/logo.png" width="200" height="auto"></a>
             </nav>
             <!-- Off Canvas Menu -->
             <aside class="left-off-canvas-menu">
                 <!-- whatever you want goes here -->
                 <ul class="off-canvas-list">
                     <li class="divider"></li>
-                    <li><a href="."><img src="img/logo.png" width="180" height="auto"></a></li>
+                    <li><a href="."><img src="../img/logo.png" width="180" height="auto"></a></li>
                     <li class="divider"></li>
-                    <li><a href=".">Home</a></li>
+                    <li><a href="../.">Home</a></li>
                     <li class="divider"></li>
-                    <li><a href="search.php">Search By Report</a></li>
+                    <li><a href="../search.php">Search By Report</a></li>
                     <li class="divider"></li>
                     <li><a href="http://www.messiahapp.com/team.php">About Us</a></li>
                     <li class="divider"></li>
@@ -51,7 +51,7 @@
                     <nav class="top-bar" data-topbar>
                         <ul class="title-area">
                             <!-- Title Area -->
-                            <li class="name"><h1><a href="."><img src="img/logo.png" width="200" height="auto"></a></h1></li>
+                            <li class="name"><h1><a href="."><img src="../img/logo.png" width="200" height="auto"></a></h1></li>
                             <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
                         </ul>
                         <section class="top-bar-section">
@@ -187,17 +187,17 @@
                         <hr>
                         <div class="row">
                             <div class="large-6 columns">
-                                <a href="#"><img src="img/messiah-logo.png" width="30" height="auto"></a> 
-                                <a href="http://www.codeforpakistan.org/"><img src="img/code-for-pakistan.png" width="120" height="auto"></a> 
-                                <a href="http://www.kpitb.gov.pk/"><img src="img/kp-itboard.png" width="120" height="auto"></a>
+                                <a href="#"><img src="../img/messiah-logo.png" width="30" height="auto"></a> 
+                                <a href="http://www.codeforpakistan.org/"><img src="../img/code-for-pakistan.png" width="120" height="auto"></a> 
+                                <a href="http://www.kpitb.gov.pk/"><img src="../img/kp-itboard.png" width="120" height="auto"></a>
                             </div>
                             <div class="large-6 columns">
                                 <ul class="inline-list right">
-                                    <li><a href=".">Home</a></li>
-                                    <li><a href="search.php">Search By Report</a></li>
+                                    <li><a href="../.">Home</a></li>
+                                    <li><a href="../search.php">Search By Report</a></li>
                                     <li><a href="http://www.messiahapp.com/team.php">About Us</a></li>
                                     <li><a href="http://www.messiahapp.com/contact.php">Contact Us</a></li>
-                                    <li><a href="login.php">Log In</a></li>
+                                    <li><a href="../login.php">Log In</a></li>
                                 </ul>
                             </div>
                         </div>

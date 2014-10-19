@@ -1,3 +1,6 @@
+<?php
+    require 'inc/api.login_web_controller.php';
+?>
 <!doctype html>
 <html class="no-js" lang="en">
 	<head>
@@ -29,13 +32,13 @@
 						<label>	
 							<div class="row collapse">
 								<div class="small-3 large-2 columns"><span class="prefix"><span class="fa fa-user"></span></span></div>
-								<div class="small-9 large-10 columns"><input type="text" placeholder="Enter your Username" required></div>
+								<div class="small-9 large-10 columns"><input type="text" name="Username" id="Username" placeholder="Enter your Username" required></div>
 							</div>
 						</label>
 						<label>	
 							<div class="row collapse">
 								<div class="small-3 large-2 columns"><span class="prefix"><span class="fa fa-key"></span></span></div>
-								<div class="small-9 large-10 columns"><input type="password" placeholder="Enter your Password" required></div>
+								<div class="small-9 large-10 columns"><input type="password" name="Password" id="Password" placeholder="Enter your Password" required></div>
 							</div>
 						</label>
 						<label>

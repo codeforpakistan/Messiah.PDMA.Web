@@ -37,11 +37,13 @@
 						<li class="divider"></li>
 						<li><a href="#"><img src="img/logo.png" width="180" height="auto"></a></li>
 						<li class="divider"></li>
-						<li><a href=".">Home</a></li>
-						<li class="divider"></li>
 						<li><a href="search.php">Search By Report</a></li>
 						<li class="divider"></li>
-						<li><a href="pdma.php#revieved-sms">Recieved SMSs</a></li>
+						<li><a href="pdma.php?revieved-sms">Recieved Messages</a></li>
+						<li class="divider"></li>
+						<li><a href="pdma.php?view-all-reports">View All Reports</a></li>
+						<li class="divider"></li>
+						<li><a href="pdma.php?stats">Statistics</a></li>
 						<li class="divider"></li>
 					</ul>
 				</aside>
