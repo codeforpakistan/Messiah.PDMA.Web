@@ -1,3 +1,23 @@
+<?php
+	switch ($_GET['table']) {
+		case 'view-all-reports':
+			//header("Location: pdma.php?table=view-all-reports");
+			break;
+		
+		case 'revieved-sms':
+			//header("Location: pdma.php?table=revieved-sms");
+			break;
+		
+		case 'stats':
+			//header("Location: pdma.php?table=stats");
+			break;
+		
+		default:
+			header("Location: pdma.php?table=view-all-reports");
+			break;
+	}
+	
+?>
 <!doctype html>
 <html class="no-js" lang="en">
 	<head>
@@ -39,11 +59,11 @@
 						<li class="divider"></li>
 						<li><a href="search.php">Search By Report</a></li>
 						<li class="divider"></li>
-						<li><a href="pdma.php?revieved-sms">Recieved Messages</a></li>
+						<li><a href="pdma.php?table=revieved-sms">Recieved Messages</a></li>
 						<li class="divider"></li>
-						<li><a href="pdma.php?view-all-reports">View All Reports</a></li>
+						<li><a href="pdma.php?table=view-all-reports">View All Reports</a></li>
 						<li class="divider"></li>
-						<li><a href="pdma.php?stats">Statistics</a></li>
+						<li><a href="pdma.php?table=stats">Statistics</a></li>
 						<li class="divider"></li>
 					</ul>
 				</aside>
