@@ -19,7 +19,6 @@
 	  	(isset($_POST['Address'])        && $_POST['Address']         != '') &&
 	  	(isset($_POST['Damage'])         && $_POST['Damage']          != '') &&
 	  	(isset($_POST['Date'])           && $_POST['Date']            != '') &&
-	  	(isset($_POST['Location'])       && $_POST['Location']        != '') &&
 	  	(isset($_POST['Detail'])         && $_POST['Detail']          != '') &&
 	  	(isset($_POST['RawData'])        && $_POST['RawData']          != '')
 		) {
@@ -34,7 +33,6 @@
 			$Address = $_POST['Address'];
 			$Damage = $_POST['Damage'];
 			$Date = $_POST['Date'];
-			$Location = $_POST['Location'];
 			$Detail = $_POST['Detail'];
 			$RawData = $_POST['RawData'];
 
@@ -53,9 +51,12 @@
 				$i = 1;
 				foreach ($ImagesArray as $image) {
 					$binary = base64_decode($image);
-					mkdir("../img/pdma-survey-images/{$GID}");
+					$imgaeDirectory = "../img/pdma-survey-images/" . $GID;
+					var_dump($imgaeDirectory);
+					mkdir($imgaeDirectory);
 					header('Content-Type: bitmap; charset=utf-8');
-					$file = fopen("../img/pdma-survey-images/{$GID}/{$GID}-{$i}.jpg", 'wb');
+					$imagePath = "../img/pdma-survey-images/". $GID. "/" . $GID . "-" . $i . ".jpg";
+					$file = fopen($imagePath, 'wb');
 					$i++;
 					fwrite($file, $binary);
 					fclose($file);
@@ -69,5 +70,4 @@
 				echo json_encode($response);
 			}
 	} else {
-		echo "Data not sent correctly";
 	}

@@ -22,20 +22,36 @@ class DBFunctions {
 	}
 
 	// Insert Data in Table
-	public function insertDataInTable($GID, $Username, $ApplicantName, $FatherName, $CNIC, $PhoneNumber, $Address, $Damage, $Date, $Location, $Detail) {
+	public function insertDataInTable($GID, $Username, $ApplicantName, $FatherName, $CNIC, $PhoneNumber, $Address, $Damage, $Date, $Detail) {
 		$query = "INSERT INTO gid_not_approved (
-						grievance_id, username, full_name, father_name, cnic, contact, address, damage_type, date, location, details
+						grievance_id, username, full_name, father_name, cnic, contact, address, damage_type, date, details, approved, in_field
 					) VALUES (
-						'{$GID}', '{$Username}', '{$ApplicantName}', '{$FatherName}', '{$CNIC}', '{$PhoneNumber}', '{$Address}', '{$Damage}', '{$Date}', '{$Location}', '{$Detail}'
+						'{$GID}', '{$Username}', '{$ApplicantName}', '{$FatherName}', '{$CNIC}', '{$PhoneNumber}', '{$Address}', '{$Damage}', '{$Date}', '{$Detail}', '0', '1'
 					)";
 		$result = @mysql_query($query);
-		var_dump($result);
-      	// check for result 
+		// check for result 
 		if ($result) {
 			return true;
 		} else {
         	// user not found
 			return false;
+		}
+	}
+
+	public function initialInsertDataInTable($GID, $FullName, $FatherName, $CNIC, $Contact, $Address, $DamageType) {
+		$date = date('Y-m-d h-m-s');
+		$query = "INSERT INTO gid_not_approved (
+						grievance_id, username, full_name, father_name, cnic, contact, address, damage_type, date, approved, in_field
+					) VALUES (
+						'{$GID}', NULL, '{$FullName}', '{$FatherName}', '{$CNIC}', '{$Contact}', '{$Address}', '{$DamageType}', '{$date}', 0, 0
+					)";
+		$result = mysql_query($query) or die(mysql_error());
+		// check for result 
+		if ($result) {
+			//return true;
+		} else {
+        	// user not found
+			//return false;
 		}
 	}
 
