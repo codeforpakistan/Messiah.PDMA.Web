@@ -19,7 +19,6 @@
 	  	(isset($_POST['Address'])        && $_POST['Address']         != '') &&
 	  	(isset($_POST['Damage'])         && $_POST['Damage']          != '') &&
 	  	(isset($_POST['Date'])           && $_POST['Date']            != '') &&
-	  	(isset($_POST['Location'])       && $_POST['Location']        != '') &&
 	  	(isset($_POST['Detail'])         && $_POST['Detail']          != '') &&
 	  	(isset($_POST['RawData'])        && $_POST['RawData']          != '')
 		) {
@@ -34,7 +33,6 @@
 			$Address = $_POST['Address'];
 			$Damage = $_POST['Damage'];
 			$Date = $_POST['Date'];
-			$Location = $_POST['Location'];
 			$Detail = $_POST['Detail'];
 			$RawData = $_POST['RawData'];
 

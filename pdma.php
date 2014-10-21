@@ -1,22 +1,8 @@
 <?php
-	switch ($_GET['table']) {
-		case 'view-all-reports':
-			//header("Location: pdma.php?table=view-all-reports");
-			break;
-		
-		case 'revieved-sms':
-			//header("Location: pdma.php?table=revieved-sms");
-			break;
-		
-		case 'stats':
-			//header("Location: pdma.php?table=stats");
-			break;
-		
-		default:
-			header("Location: pdma.php?table=view-all-reports");
-			break;
+	// Logout
+	if (isset($_GET['logout'])) {
+		require 'logout.php';
 	}
-	
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -47,7 +33,7 @@
 					<a style="margin-left:55px;" href="."><img src="img/logo.png" width="200" height="auto"></a>
 				</nav>
 				<ul id="user-details" data-dropdown-content class="f-dropdown">
-					<li><a href="#">Logout</a></li>
+					<li><a href="pdma.php?logout">Logout</a></li>
 				</ul>
                 <!-- Right Nav Section -->
 				<!-- Off Canvas Menu -->
@@ -70,9 +56,28 @@
 				<!-- main content goes here -->
 				<!-- close the off-canvas menu -->
 				<a class="exit-off-canvas"></a><br><br>
-				<div class="small-12 columns">
+				<div class="small-12 columns" style="height:70vh;">
 					<!-- All to PDMA Content goes here -->
-					<hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+					<?php
+						//Code to handle tables
+						switch ($_GET['table']) {
+							case 'view-all-reports':
+								//header("Location: pdma.php?table=view-all-reports");
+								break;
+							
+							case 'revieved-sms':
+								include 'inc/api.smile_sms.php';
+								break;
+							
+							case 'stats':
+								//header("Location: pdma.php?table=stats");
+								break;
+							
+							default:
+								header("Location: pdma.php?table=view-all-reports");
+								break;
+						}
+					?>
 				</div>
 				<footer>
 					<div class="large-12 columns">
