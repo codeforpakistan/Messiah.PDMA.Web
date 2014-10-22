@@ -28,7 +28,7 @@ class DBFunctions {
 						full_name = '{$ApplicantName}', 
 						father_name = '{$FatherName}', 
 						cnic = '{$CNIC}', 
-						contact '{$PhoneNumber}', 
+						contact =  '{$PhoneNumber}', 
 						address = '{$Address}', 
 						damage_type  = '{$Damage}', 
 						details = '{$Detail}', 
@@ -37,7 +37,7 @@ class DBFunctions {
 						in_field = '1',
 						in_field_date = '{$Date}'
 					WHERE grievance_id = '{$GID}'";
-		$result = @mysql_query($query, $connection);
+		$result = mysql_query($query) or die(mysql_error());
 		// check for result 
 		if ($result) {
 			return true;
