@@ -43,7 +43,7 @@
 			$response = array("Status" => 0);
 
 			// check for user
-			$data = $db->insertDataInTable($GID, $Username, $ApplicantName, $FatherName, $CNIC, $PhoneNumber, $Address, $Damage, $Date, $Location, $Detail);
+			$data = $db->insertDataInTable($GID, $Username, $ApplicantName, $FatherName, $CNIC, $PhoneNumber, $Address, $Damage, $Date, $Detail);
 			if ($data != false) {
 				// Data inserted found
 				// Now Convert Rawdata to Images
