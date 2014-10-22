@@ -34,6 +34,7 @@
 			$Damage = $_POST['Damage'];
 			$Date = $_POST['Date'];
 			$Detail = $_POST['Detail'];
+			$Location = $_POST['Location'];
 			$RawData = $_POST['RawData'];
 
 			// include db handler
@@ -43,7 +44,7 @@
 			$response = array("Status" => 0);
 
 			// check for user
-			$data = $db->insertDataInTable($GID, $Username, $ApplicantName, $FatherName, $CNIC, $PhoneNumber, $Address, $Damage, $Date, $Detail);
+			$data = $db->updateDataInTableForApp($GID, $Username, $ApplicantName, $FatherName, $CNIC, $PhoneNumber, $Address, $Damage, $Location, $Date, $Detail);
 			if ($data != false) {
 				// Data inserted found
 				// Now Convert Rawdata to Images

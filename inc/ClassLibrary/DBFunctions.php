@@ -22,13 +22,22 @@ class DBFunctions {
 	}
 
 	// Insert Data in Table
-	public function insertDataInTable($GID, $Username, $ApplicantName, $FatherName, $CNIC, $PhoneNumber, $Address, $Damage, $Date, $Detail) {
-		$query = "INSERT INTO gid_not_approved (
-						grievance_id, username, full_name, father_name, cnic, contact, address, damage_type, date, details, approved, in_field
-					) VALUES (
-						'{$GID}', '{$Username}', '{$ApplicantName}', '{$FatherName}', '{$CNIC}', '{$PhoneNumber}', '{$Address}', '{$Damage}', '{$Date}', '{$Detail}', '0', '1'
-					)";
-		$result = @mysql_query($query);
+	public function updateDataInTableForApp($GID, $Username, $ApplicantName, $FatherName, $CNIC, $PhoneNumber, $Address, $Damage, $Location, $Date, $Detail) {
+		$query = "UPDATE gid_not_approved SET
+						username = '{$Username}', 
+						full_name = '{$ApplicantName}', 
+						father_name = '{$FatherName}', 
+						cnic = '{$CNIC}', 
+						contact =  '{$PhoneNumber}', 
+						address = '{$Address}', 
+						damage_type  = '{$Damage}', 
+						details = '{$Detail}', 
+						location = '{$Location}', 
+						approved = '0', 
+						in_field = '1',
+						in_field_date = '{$Date}'
+					WHERE grievance_id = '{$GID}'";
+		$result = mysql_query($query) or die(mysql_error());
 		// check for result 
 		if ($result) {
 			return true;
