@@ -50,11 +50,10 @@
 				// Now Convert Rawdata to Images
   				$ImagesArray = explode("|", $RawData);
 				$i = 1;
+				$imgaeDirectory = "../img/pdma-survey-images/" . $GID;
+				mkdir($imgaeDirectory);
 				foreach ($ImagesArray as $image) {
 					$binary = base64_decode($image);
-					$imgaeDirectory = "../img/pdma-survey-images/" . $GID;
-					var_dump($imgaeDirectory);
-					mkdir($imgaeDirectory);
 					header('Content-Type: bitmap; charset=utf-8');
 					$imagePath = "../img/pdma-survey-images/". $GID. "/" . $GID . "-" . $i . ".jpg";
 					$file = fopen($imagePath, 'wb');
