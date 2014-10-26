@@ -41,6 +41,4 @@
 				\ClassLibrary\UsableFunctions::redirect_to("login.php?error=Incorrect");
 			}
 		}
-	} else {
-		\ClassLibrary\UsableFunctions::redirect_to("pdma.php");
 	}

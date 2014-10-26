@@ -1,8 +1,11 @@
 <?php
+	require 'inc/api.login_web_controller.php';
 	// Logout
 	if (isset($_GET['logout'])) {
 		require 'logout.php';
 	}
+
+	if(isset($_SESSION['pdma_loggedin'])){
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -45,6 +48,10 @@
 						<li class="divider"></li>
 						<li><a href="search.php">Search By Report</a></li>
 						<li class="divider"></li>
+						<?php if(isset($_SESSION['pdma_loggedin'])){ ?>
+						<li><a href="pdma.php">Dashboard</a></li>
+						<li class="divider"></li>
+						<?php } ?>
 						<li><a href="pdma.php?table=revieved-sms">Recieved Messages</a></li>
 						<li class="divider"></li>
 						<li><a href="pdma.php?table=view-all-reports">View All Reports</a></li>
@@ -119,3 +126,6 @@
 		</script>
 	</body>
 </html>
+<?php } else {
+	\ClassLibrary\UsableFunctions::redirect_to("login.php");
+}?>

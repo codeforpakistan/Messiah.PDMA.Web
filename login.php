@@ -1,5 +1,8 @@
 <?php
     require 'inc/api.login_web_controller.php';
+    if(isset($_SESSION['pdma_loggedin'])){
+    	\ClassLibrary\UsableFunctions::redirect_to("pdma.php");
+    }
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
