@@ -29,11 +29,19 @@
 					<!-- whatever you want goes here -->
 					<ul class="off-canvas-list">
 						<li class="divider"></li>
-						<li><a href="."><img src="img/logo.png" width="90" height="auto"></a></li>
+						<li><a href="."><img src="img/logo.png" width="180" height="auto"></a></li>
 						<li class="divider"></li>
-						<li><a href=".">Overview</a></li>
+						<li><a href=".">Home</a></li>
 						<li class="divider"></li>
-						<li><a href="contact.php">Contact Us</a></li>
+						<li><a href="search.php">Search By Report</a></li>
+						<li class="divider"></li>
+						<?php if(isset($_SESSION['pdma_loggedin'])){ ?>
+						<li><a href="pdma.php">Dashboard</a></li>
+						<li class="divider"></li>
+						<?php } ?>
+						<li><a href="http://www.messiahapp.com/team.php">About Us</a></li>
+						<li class="divider"></li>
+						<li><a href="http://www.messiahapp.com/contact.php">Contact Us</a></li>
 						<li class="divider"></li>
 						<li><a href="#" data-options="align:left" data-dropdown="login" class="">Log In</a></li>
 					</ul>
@@ -52,12 +60,23 @@
 							</ul>
 							<section class="top-bar-section">
 								<!-- Right Nav Section -->
-								<ul class="left">
+								<ul class="off-canvas-list">
 									<li class="divider"></li>
-									<li><a href=".">Overview</a></li>
+									<li><a href="."><img src="img/logo.png" width="180" height="auto"></a></li>
 									<li class="divider"></li>
-									<li><a href="contact.php">Contact Us</a></li>
+									<li><a href=".">Home</a></li>
 									<li class="divider"></li>
+									<li><a href="search.php">Search By Report</a></li>
+									<li class="divider"></li>
+									<?php if(isset($_SESSION['pdma_loggedin'])){ ?>
+									<li><a href="pdma.php">Dashboard</a></li>
+									<li class="divider"></li>
+									<?php } ?>
+									<li><a href="http://www.messiahapp.com/team.php">About Us</a></li>
+									<li class="divider"></li>
+									<li><a href="http://www.messiahapp.com/contact.php">Contact Us</a></li>
+									<li class="divider"></li>
+									<li><a href="#" data-options="align:left" data-dropdown="login" class="">Log In</a></li>
 								</ul>
 								<ul class="right">
 									<li><a href="#" data-options="align:left" data-dropdown="login" class="">Log In</a></li>

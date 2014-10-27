@@ -35,6 +35,10 @@
 						<li class="divider"></li>
 						<li><a href="search.php">Search By Report</a></li>
 						<li class="divider"></li>
+						<?php if(isset($_SESSION['pdma_loggedin'])){ ?>
+						<li><a href="pdma.php">Dashboard</a></li>
+						<li class="divider"></li>
+						<?php } ?>
 						<li><a href="http://www.messiahapp.com/team.php">About Us</a></li>
 						<li class="divider"></li>
 						<li><a href="http://www.messiahapp.com/contact.php">Contact Us</a></li>

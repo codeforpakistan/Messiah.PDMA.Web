@@ -64,6 +64,19 @@ class DBFunctions {
 		}
 	}
 
+	public function getAllReports() {
+		return @mysql_query("SELECT * FROM gid_not_approved");
+	}
+
+	public function getReportByValue($value) {
+		$query = NULL;
+		if(strlen($value) == 11){
+			return @mysql_query("SELECT * FROM gid_not_approved WHERE grievance_id = '{$value}' LIMIT 1");
+		} else {
+			return @mysql_query("SELECT * FROM gid_not_approved WHERE cnic = '{$value}' LIMIT 1");
+		}
+	}
+
 	/* Get user by username and password */
 	public function getUserByUsernameAndPassword($username, $password) {
 		$result = @mysql_query("SELECT * FROM users WHERE username = '$username'") or die(mysql_error());

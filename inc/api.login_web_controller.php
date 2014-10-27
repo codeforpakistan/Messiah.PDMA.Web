@@ -1,7 +1,7 @@
 <?php
 	
 	session_start();
-	require 'autoload.php';
+	require_once 'autoload.php';
 
 	/* --------------------------------------
 	/* File to handle all API requests
@@ -41,6 +41,4 @@
 				\ClassLibrary\UsableFunctions::redirect_to("login.php?error=Incorrect");
 			}
 		}
-	} else {
-		\ClassLibrary\UsableFunctions::redirect_to("pdma.php");
 	}

@@ -1,8 +1,11 @@
 <?php
+	require 'inc/api.login_web_controller.php';
 	// Logout
 	if (isset($_GET['logout'])) {
 		require 'logout.php';
 	}
+
+	if(isset($_SESSION['pdma_loggedin'])){
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -16,6 +19,7 @@
         <link href='http://fonts.googleapis.com/css?family=Lato:400,100,100italic,700,900' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/normalize.css" />
 		<script src="js/vendor/modernizr.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js"></script>
 	</head>
 	<body style="background-color:#ecf0f1">
 		<!-- Off Canvas -->
@@ -56,48 +60,37 @@
 				<!-- main content goes here -->
 				<!-- close the off-canvas menu -->
 				<a class="exit-off-canvas"></a><br><br>
-				<div class="small-12 columns" style="height:70vh;">
-					<!-- All to PDMA Content goes here -->
-					<?php
-						//Code to handle tables
-						switch ($_GET['table']) {
-							case 'view-all-reports':
-								//header("Location: pdma.php?table=view-all-reports");
-								break;
-							
-							case 'revieved-sms':
-								include 'inc/api.smile_sms.php';
-								break;
-							
-							case 'stats':
-								//header("Location: pdma.php?table=stats");
-								break;
-							
-							default:
-								header("Location: pdma.php?table=view-all-reports");
-								break;
-						}
-					?>
-				</div>
-				<footer>
-					<div class="large-12 columns">
-						<hr>
-						<div class="large-6 columns">
-							<a href="#"><img src="img/messiah-logo.png" width="30" height="auto"></a> 
-							<a href="http://www.codeforpakistan.org/"><img src="img/code-for-pakistan.png" width="120" height="auto"></a> 
-							<a href="http://www.kpitb.gov.pk/"><img src="img/kp-itboard.png" width="120" height="auto"></a>
-						</div>
-						<div class="large-6 columns">
-							<ul class="inline-list right">
-								<li><a href=".">Home</a></li>
-								<li><a href="search.php">Search By Report</a></li>
-								<li><a href="http://www.messiahapp.com/team.php">About Us</a></li>
-								<li><a href="http://www.messiahapp.com/contact.php">Contact Us</a></li>
-								<li><a href="login.php">Log In</a></li>
-							</ul>
-						</div>
+				<div class="row">
+					<div class="small-12 columns">
+						<!-- All to PDMA Content goes here -->
+						<?php
+							//Code to handle tables
+							switch ($_GET['table']) {
+								case 'view-all-reports':
+									include 'inc/api.view_all_reports_controller.php';
+									break;
+								
+								case 'view_detailed_report':
+									if(isset($_GET['GID'])){
+										include 'inc/api.view_detailed_reports_controller.php';	
+									}
+									break;
+								
+								case 'revieved-sms':
+									include 'inc/api.smile_sms_controller.php';
+									break;
+								
+								case 'stats':
+									//header("Location: pdma.php?table=stats");
+									break;
+								
+								default:
+									header("Location: pdma.php?table=view-all-reports");
+									break;
+							}
+						?>
 					</div>
-				</footer>
+				</div>
 			</div>
 			<!-- End of inner-wrap -->
 		</div>
@@ -119,3 +112,6 @@
 		</script>
 	</body>
 </html>
+<?php } else {
+	\ClassLibrary\UsableFunctions::redirect_to("login.php");
+}?>

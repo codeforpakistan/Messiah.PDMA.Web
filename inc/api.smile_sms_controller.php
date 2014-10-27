@@ -1,6 +1,6 @@
 <?php
 	
-	require 'autoload.php';
+	require_once 'autoload.php';
 	/*Message Format
 	  Send this as a text message to 8333 "PDMA Full Name, Father Name, CNIC, Contact, Damage Type, Address"
 	*/
