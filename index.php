@@ -33,7 +33,7 @@
 						<li class="divider"></li>
 						<li><a href=".">Home</a></li>
 						<li class="divider"></li>
-						<li><a href="search.php">Search By Report</a></li>
+						<li><a href="search.php?search">Search By Report</a></li>
 						<li class="divider"></li>
 						<?php if(isset($_SESSION['pdma_loggedin'])){ ?>
 						<li><a href="pdma.php">Dashboard</a></li>
@@ -64,7 +64,7 @@
 									<li class="divider"></li>
 									<li><a href=".">Home</a></li>
 									<li class="divider"></li>
-									<li><a href="search.php">Search By Report</a></li>
+									<li><a href="search.php?search">Search By Report</a></li>
 									<li class="divider"></li>
 									<li><a href="http://www.messiahapp.com/team.php">About Us</a></li>
 									<li class="divider"></li>
@@ -146,7 +146,7 @@
 							<div class="large-6 columns">
 								<ul class="inline-list right">
 									<li><a href=".">Home</a></li>
-									<li><a href="search.php">Search By Report</a></li>
+									<li><a href="search.php?search">Search By Report</a></li>
 									<li><a href="http://www.messiahapp.com/team.php">About Us</a></li>
 									<li><a href="http://www.messiahapp.com/contact.php">Contact Us</a></li>
 									<li><a href="login.php">Log In</a></li>

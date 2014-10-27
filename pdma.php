@@ -47,13 +47,11 @@
 						<li class="divider"></li>
 						<li><a href="#"><img src="img/logo.png" width="180" height="auto"></a></li>
 						<li class="divider"></li>
-						<li><a href="search.php">Search By Report</a></li>
+						<li><a href="search.php?search">Search By Report</a></li>
 						<li class="divider"></li>
 						<li><a href="pdma.php?table=revieved-sms">Recieved Messages</a></li>
 						<li class="divider"></li>
 						<li><a href="pdma.php?table=view-all-reports">View All Reports</a></li>
-						<li class="divider"></li>
-						<li><a href="pdma.php?table=stats">Statistics</a></li>
 						<li class="divider"></li>
 					</ul>
 				</aside>
@@ -67,21 +65,17 @@
 							//Code to handle tables
 							switch ($_GET['table']) {
 								case 'view-all-reports':
-									include 'inc/api.view_all_reports_controller.php';
+									include_once 'inc/api.view_all_reports_controller.php';
 									break;
 								
 								case 'view_detailed_report':
 									if(isset($_GET['GID'])){
-										include 'inc/api.view_detailed_reports_controller.php';	
+										include_once 'inc/api.view_detailed_reports_controller.php';	
 									}
 									break;
 								
 								case 'revieved-sms':
-									include 'inc/api.smile_sms_controller.php';
-									break;
-								
-								case 'stats':
-									//header("Location: pdma.php?table=stats");
+									include_once 'inc/api.smile_sms_controller.php';
 									break;
 								
 								default:
@@ -91,6 +85,26 @@
 						?>
 					</div>
 				</div>
+				<footer class="row">
+						<div class="large-12 columns">
+							<hr>
+							<div class="row">
+								<div class="large-6 columns">
+									<a href="#"><img src="img/messiah-logo.png" width="30" height="auto"></a> 
+									<a href="http://www.codeforpakistan.org/"><img src="img/code-for-pakistan.png" width="120" height="auto"></a> 
+									<a href="http://www.kpitb.gov.pk/"><img src="img/kp-itboard.png" width="120" height="auto"></a>
+							</div>
+							<div class="large-6 columns">
+								<ul class="inline-list right">
+									<li><a href=".">Home</a></li>
+									<li><a href="search.php?search">Search By Report</a></li>
+									<li><a href="http://www.messiahapp.com/team.php">About Us</a></li>
+									<li><a href="http://www.messiahapp.com/contact.php">Contact Us</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</footer>
 			</div>
 			<!-- End of inner-wrap -->
 		</div>
