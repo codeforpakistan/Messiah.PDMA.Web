@@ -19,6 +19,7 @@
         <link href='http://fonts.googleapis.com/css?family=Lato:400,100,100italic,700,900' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/normalize.css" />
 		<script src="js/vendor/modernizr.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js"></script>
 	</head>
 	<body style="background-color:#ecf0f1">
 		<!-- Off Canvas -->
@@ -48,10 +49,6 @@
 						<li class="divider"></li>
 						<li><a href="search.php">Search By Report</a></li>
 						<li class="divider"></li>
-						<?php if(isset($_SESSION['pdma_loggedin'])){ ?>
-						<li><a href="pdma.php">Dashboard</a></li>
-						<li class="divider"></li>
-						<?php } ?>
 						<li><a href="pdma.php?table=revieved-sms">Recieved Messages</a></li>
 						<li class="divider"></li>
 						<li><a href="pdma.php?table=view-all-reports">View All Reports</a></li>
@@ -64,13 +61,19 @@
 				<!-- close the off-canvas menu -->
 				<a class="exit-off-canvas"></a><br><br>
 				<div class="row">
-					<div class="small-12 columns" style="height:70vh;">
+					<div class="small-12 columns">
 						<!-- All to PDMA Content goes here -->
 						<?php
 							//Code to handle tables
 							switch ($_GET['table']) {
 								case 'view-all-reports':
 									include 'inc/api.view_all_reports_controller.php';
+									break;
+								
+								case 'view_detailed_report':
+									if(isset($_GET['GID'])){
+										include 'inc/api.view_detailed_reports_controller.php';	
+									}
 									break;
 								
 								case 'revieved-sms':
@@ -88,25 +91,6 @@
 						?>
 					</div>
 				</div>
-				<footer>
-					<div class="large-12 columns">
-						<hr>
-						<div class="large-6 columns">
-							<a href="#"><img src="img/messiah-logo.png" width="30" height="auto"></a> 
-							<a href="http://www.codeforpakistan.org/"><img src="img/code-for-pakistan.png" width="120" height="auto"></a> 
-							<a href="http://www.kpitb.gov.pk/"><img src="img/kp-itboard.png" width="120" height="auto"></a>
-						</div>
-						<div class="large-6 columns">
-							<ul class="inline-list right">
-								<li><a href=".">Home</a></li>
-								<li><a href="search.php">Search By Report</a></li>
-								<li><a href="http://www.messiahapp.com/team.php">About Us</a></li>
-								<li><a href="http://www.messiahapp.com/contact.php">Contact Us</a></li>
-								<li><a href="login.php">Log In</a></li>
-							</ul>
-						</div>
-					</div>
-				</footer>
 			</div>
 			<!-- End of inner-wrap -->
 		</div>

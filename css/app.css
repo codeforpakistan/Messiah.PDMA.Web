@@ -29,3 +29,4 @@ ul.off-canvas-list li a:hover {background: #0D5736;}
 .top-bar-section li:not(.has-form) a:not(.button):hover {background-color: #0D5736; color:white;}
 .user-icon{color:#ecf0f1; font-size:25px;}
 .user-icon:hover{color:#95a5a6;}
+#map_canvas {width:500px;height:400px;background-color:#CCC;}

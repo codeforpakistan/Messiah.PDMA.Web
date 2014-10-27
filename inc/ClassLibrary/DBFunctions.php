@@ -71,9 +71,9 @@ class DBFunctions {
 	public function getReportByValue($value) {
 		$query = NULL;
 		if(strlen($value) == 11){
-			$query = @mysql_query("SELECT * FROM gid_not_approved WHERE grievance_id = '{$value}' LIMIT 1");
+			return @mysql_query("SELECT * FROM gid_not_approved WHERE grievance_id = '{$value}' LIMIT 1");
 		} else {
-			$query = @mysql_query("SELECT * FROM gid_not_approved WHERE cnic = '{$value}' LIMIT 1");
+			return @mysql_query("SELECT * FROM gid_not_approved WHERE cnic = '{$value}' LIMIT 1");
 		}
 	}
 
