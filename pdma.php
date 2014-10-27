@@ -63,28 +63,30 @@
 				<!-- main content goes here -->
 				<!-- close the off-canvas menu -->
 				<a class="exit-off-canvas"></a><br><br>
-				<div class="small-12 columns" style="height:70vh;">
-					<!-- All to PDMA Content goes here -->
-					<?php
-						//Code to handle tables
-						switch ($_GET['table']) {
-							case 'view-all-reports':
-								//header("Location: pdma.php?table=view-all-reports");
-								break;
-							
-							case 'revieved-sms':
-								include 'inc/api.smile_sms.php';
-								break;
-							
-							case 'stats':
-								//header("Location: pdma.php?table=stats");
-								break;
-							
-							default:
-								header("Location: pdma.php?table=view-all-reports");
-								break;
-						}
-					?>
+				<div class="row">
+					<div class="small-12 columns" style="height:70vh;">
+						<!-- All to PDMA Content goes here -->
+						<?php
+							//Code to handle tables
+							switch ($_GET['table']) {
+								case 'view-all-reports':
+									include 'inc/api.view_all_reports_controller.php';
+									break;
+								
+								case 'revieved-sms':
+									include 'inc/api.smile_sms_controller.php';
+									break;
+								
+								case 'stats':
+									//header("Location: pdma.php?table=stats");
+									break;
+								
+								default:
+									header("Location: pdma.php?table=view-all-reports");
+									break;
+							}
+						?>
+					</div>
 				</div>
 				<footer>
 					<div class="large-12 columns">

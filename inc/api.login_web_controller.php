@@ -1,7 +1,7 @@
 <?php
 	
 	session_start();
-	require 'autoload.php';
+	require_once 'autoload.php';
 
 	/* --------------------------------------
 	/* File to handle all API requests
